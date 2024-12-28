@@ -16,3 +16,6 @@ DATABASE_URL=postgres://postgres:Password@localhost:5432/socialnetwork npm run m
 
 # Check Node
 Node index.js
+
+# Run Localhost
+localhost:3005/posts
