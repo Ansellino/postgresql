@@ -1,4 +1,5 @@
 const express = require('express');
+
 const pg = require('pg');
 
 const pool = new pg.Pool({
@@ -6,7 +7,7 @@ const pool = new pg.Pool({
     port: 5432,
     database: 'socialnetwork',
     user: 'postgres',
-    password: 'AnselZorro'
+    password: 'AnselZorro',
 });
 
 const app = express();
@@ -16,7 +17,7 @@ app.get('/posts', async (req, res) => {
     const { rows } = await pool.query(`
         SELECT * FROM posts;
     `);
-
+    
     res.send(`
       <table>
         <thead>
