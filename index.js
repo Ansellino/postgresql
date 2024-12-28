@@ -12,7 +12,7 @@ const pool = new pg.Pool({
 const app = express();
 app.use(express.urlencoded({ extended: true}));
 
-app.get('/posts', async(req,res)=>{
+app.get('/posts', async (req, res) => {
     const { rows } = await pool.query(`
         SELECT * FROM posts;
     `);
@@ -50,7 +50,17 @@ app.get('/posts', async(req,res)=>{
             </div>
             <button type="submit">Create</button>
       </form>  
-    `)
+    `);
+});
+
+app.post('/posts', async (req, res) => {
+    const {lng, lat } = req.body;
+
+    await pool.query('INSERT INTO posts (lat,lng) VALUES ($1, $2):',
+        [lat,lng]
+    );
+
+    res.redirect('/posts');
 });
 
 app.listen(3005, () => {
