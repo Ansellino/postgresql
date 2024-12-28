@@ -13,3 +13,6 @@ DATABASE_URL=postgres://postgres:Password@localhost:5432/socialnetwork npm run m
 
 # Migrate down
 DATABASE_URL=postgres://postgres:Password@localhost:5432/socialnetwork npm run migrate down
+
+# Check Node
+Node index.js
