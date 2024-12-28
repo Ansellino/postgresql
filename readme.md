@@ -8,8 +8,8 @@ npm run migrate create table comments
 # Create migrate rename
 npm run migrate create rename contents to body
 
-# Create Table
-DATABASE_URL=postgres://postgres:AnselZorro@localhost:5432/socialnetwork npm run migrate up
+# Migrate up
+DATABASE_URL=postgres://postgres:Password@localhost:5432/socialnetwork npm run migrate up
 
-# Drop Table
-DATABASE_URL=postgres://postgres:AnselZorro@localhost:5432/socialnetwork npm run migrate down
+# Migrate down
+DATABASE_URL=postgres://postgres:Password@localhost:5432/socialnetwork npm run migrate down
